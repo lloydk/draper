@@ -56,7 +56,7 @@ module Draper
     end
 
     console do
-      require 'action_controller/test_case'
+      require 'action_controller/test_case' if Rails.env.test?
       ApplicationController.new.view_context
       Draper::ViewContext.build
     end
